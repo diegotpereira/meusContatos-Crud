@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html lang="pt-br" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<link rel="stylesheet" href="../styles/style.css" type="text/css" />
+	<meta charset="utf-8" name="viewport"
+		content="width=device-width, initial-scale=1"
+		http-equiv="X-UA-Conpatible" />
+	<title>Editar #{contato.nomeContato}</title>
+</h:head>
+<h:body>
+	<div class="centro">
+		<h:form>
+			<p:panelGrid columns="2" cellspacing="20" border="1">
+
+				<f:facet name="header">
+					<div class="labelForm">
+						<p:outputLabel value="Editar contato"></p:outputLabel>
+					</div>
+				</f:facet>
+
+				<p:outputLabel value="Nome"></p:outputLabel>
+				<p:inputText value="#{contato.nomeContato}" required="true"></p:inputText>
+
+				<p:outputLabel value="Telefone"></p:outputLabel>
+				<p:inputText value="#{contato.telefoneContato}" required="true"></p:inputText>
+
+				<p:outputLabel value="Email"></p:outputLabel>
+				<p:inputText value="#{contato.emailContato}" required="true"></p:inputText>
+
+				<p:outputLabel value="Endereço"></p:outputLabel>
+				<p:inputText value="#{contato.enderecoContato}" required="true"></p:inputText>
+
+				<f:facet name="footer">
+					<p:commandButton class="buttonEditPage"
+						action="#{contatoBean.update(contato)}" value="Atualizar"
+						ajax="false" icon="ui-icon-disk"></p:commandButton>
+				</f:facet>
+
+			</p:panelGrid>
+		</h:form>
+	</div>
+	<div class="centro">
+		<p:link class="cancel" href="/faces/index.xhtml" value="Cancelar"></p:link>
+	</div>
+</h:body>
+</html>

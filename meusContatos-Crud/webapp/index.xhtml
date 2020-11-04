@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html lang="pt-br" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<link rel="stylesheet" href="../styles/style.css" type="text/css" />
+	<meta charset="utf-8" name="viewport"
+		content="width=device-width, initial-scale=1"
+		http-equiv="X-UA-Conpatible" />
+	<title>myContacts</title>
+</h:head>
+<h:body>
+	<div class="centro">
+		<p:outputLabel class="label" value="Lista de contatos"></p:outputLabel>
+		<h:form>
+
+			<p:dataTable value="#{contatoBean.searchContacts()}" var="contato"
+				border="1">
+
+				<p:column>
+					<f:facet name="header">Nome</f:facet>
+					<p:outputLabel value="#{contato.nomeContato}"></p:outputLabel>
+				</p:column>
+
+				<p:column>
+					<f:facet name="header">Telefone</f:facet>
+					<p:outputLabel value="#{contato.telefoneContato}"></p:outputLabel>
+				</p:column>
+
+				<p:column>
+					<f:facet name="header">Email</f:facet>
+					<p:outputLabel value="#{contato.emailContato}"></p:outputLabel>
+				</p:column>
+
+				<p:column>
+					<f:facet name="header">Endereço</f:facet>
+					<p:outputLabel value="#{contato.enderecoContato}"></p:outputLabel>
+				</p:column>
+
+				<p:column>
+					<f:facet name="header">Editar</f:facet>
+					<div class="centro">
+						<p:commandButton action="#{contatoBean.edit(contato.idContato)}"
+							value="Editar" ajax="false" icon="ui-icon-pencil"></p:commandButton>
+					</div>
+				</p:column>
+
+				<p:column>
+					<f:facet name="header">Apagar</f:facet>
+					<div class="centro">
+						<p:commandButton action="#{contatoBean.delete(contato.idContato)}"
+							value="Apagar" ajax="false" icon="ui-icon-trash"></p:commandButton>
+					</div>
+				</p:column>
+
+			</p:dataTable>
+			<br></br>
+			<div class="centro">
+				<p:commandButton action="#{contatoBean.add}"
+					value="Adicionar contato" ajax="false" icon="ui-icon-plusthick"></p:commandButton>
+			</div>
+		</h:form>
+	</div>
+</h:body>
+</html>
