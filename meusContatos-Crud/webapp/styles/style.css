@@ -1,0 +1,36 @@
+.centro {
+	align-items: center;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	display: flex;
+}
+
+body {
+	background-color: rgba(220, 220, 220, 0.5);
+}
+
+.label {
+	font-size: 28px;
+}
+
+.button {
+	margin-left: 35%;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.buttonEditPage {
+	margin-left: 30%;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.cancel {
+	margin-top: 10px;
+}
+
+.labelForm {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
