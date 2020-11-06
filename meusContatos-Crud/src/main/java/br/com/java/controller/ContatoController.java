@@ -50,7 +50,7 @@ public class ContatoController {
 		Contato contato = new Contato();
 		Map<String, Object> sessionMap = FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
 		sessionMap.put("contato", contato);
-		return "/faces/add.xhtml";
+		return "/faces/adicionar.xhtml";
 		
 	}
 	

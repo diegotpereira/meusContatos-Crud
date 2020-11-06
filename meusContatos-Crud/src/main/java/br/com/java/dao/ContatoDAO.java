@@ -11,6 +11,7 @@ import br.com.java.model.Contato;
 
 
 
+
 public class ContatoDAO {
 	
 	EntityManager entity = ConexaoBD.getEntityManagerFactory().createEntityManager();
@@ -21,6 +22,7 @@ public class ContatoDAO {
 		entity.persist(contato);
 		entity.getTransaction().commit();
 	}
+	
 	
 	public void editar(Contato contato) {
 		
